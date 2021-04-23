@@ -1,4 +1,4 @@
-char = [" ","а","б","в","г","д","е","ж","з","и",
+chars = [" ","а","б","в","г","д","е","ж","з","и",
         "й","к","л","м","н","о","п","р","с","т",
         "у","ф","х","ц",'ч','ш','щ','ъ','ы','ь',
         'э','ю','я','А','Б','В','Г','Д','Е','Ж',
@@ -13,12 +13,29 @@ char = [" ","а","б","в","г","д","е","ж","з","и",
         "@","№","#",";","$","%",":","^","?","&",
         "*","(",")","-","_","+","=","~","1","2",
         "3","4","5","6","7","8","9","0"]
-def write(in_char):
-    num_char = char.index(in_char)
+
+    
+def write(input_char): #write('=')
+    num_char = chars.index(input_char)
     print(num_char)
     with open('font', 'r') as fontbit:
         font = fontbit.readlines()
-        for i in range(7):
-            print(font[i])
+        for i in range(8):
+            print(font[i + (8 * num_char)], end='')
 
-write('m')
+write('t')
+
+class Lable():
+    def __init__(self, screen_array):
+        self.screen_array = screen_array
+    
+    def lable(self, text='text', x=0, y=0):
+            text = list(text)
+            i = 0
+            j = 0
+            for num_char_text in range(len(text)-1):
+                i += 1
+                if text[i] == '\n'
+                    j += 1
+                    i = 0
+                self.screen_array[i + x][j + y] = text[num_char_text]

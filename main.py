@@ -1,5 +1,5 @@
-#! /bin/python3
-
+#! /usr/bin/python3
+#
 import random
 from numpy import *
 from set import w, h, debug
